@@ -12,12 +12,10 @@ let package = Package(
             targets: ["libmpv"]),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "libmpv"),
-        .testTarget(
-            name: "libmpvTests",
-            dependencies: ["libmpv"]),
+        .binaryTarget(
+            name: "libmpv",
+            url: "https://github.com/v4to/libmpv/releases/download/1.0.0/libmpv.zip",
+            checksum: "b6bd470fd5a7601e5cadf42ecf12f6b117a32eed126a5f9d49f386ecbe09ef99"
+        )
     ]
 )
